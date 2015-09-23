@@ -18,12 +18,17 @@ Bacteria [] marcus = new Bacteria[500];
  		marcus[k].moveaway();
  		marcus[k].show();
  		}
- 	} else if (mousePressed && mouseButton==RIGHT) 
+ 	} else if (mousePressed && mouseButton==RIGHT) {
  		for (int k=0;k<500;k++) {
  		marcus[k].teleport();
  		marcus[k].show();
  		}
- 	else {
+ 	} else if (keyPressed==true&&key=='s') {
+ 		for (int k=0;k<500;k++) {
+ 		marcus[k].move();
+ 		marcus[k].show();
+ 		}
+ 	} else {
  		for (int j=0;j<500;j++) {
  		marcus[j].movefood();
  		marcus[j].show();
@@ -46,6 +51,11 @@ Bacteria [] marcus = new Bacteria[500];
 	 		r++;
 	 		g++;
 	 		b++;
+	 	}
+
+	 	void move(){
+	 		x+=(int)(Math.random()*3)-1;
+	 		y+=(int)(Math.random()*3)-1;
 	 	}
 
 	 	void movefood() {
